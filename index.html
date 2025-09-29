@@ -1,253 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal Portfolio</title>
-    <style>
-        * {
-    box-sizing: border-box;
+
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Technical Documentation Page</title>
+    </head>
+
+
+    <body>
+        <nav id="navbar">
+          <header>HTML/CSS DOCUMENTATION</header>
+            <a href="#Overview" class="nav-link">Overview</a>
+            <a href="#getting_started" class="nav-link">Getting Started</a>
+            <a href="#html_syntax" class="nav-link">HTML Syntax</a>
+            <a href="#css_syntax" class="nav-link">CSS Syntax</a>
+            <a href="#selectors" class="nav-link">CSS Selectors</a>
+            <a href="#box_model" class="nav-link">CSS Box Model</a>
+            <a href="#flexbox" class="nav-link">CSS Flexbox</a>
+            <a href="#troubleshooting" class="nav-link">Troubleshooting</a>
+            <a href="#resources" class="nav-link">Resources</a>
+        </nav>
+
+
+        <main id="main-doc">
+
+          <header>
+           <h1>HTML & CSS Documentation</h1>
+          </header>
+
+          <section id="Overview" class="main-section">
+            <header>Overview</header>
+            <p>HTML (Hyper Text Markup Language) structures web content, while CSS (Cascading Style Sheets) styles it. Together, they form the foundation of all modern web pages.</p>
+          </section>
+
+          <section id="getting_started" class="main-section">
+            <header>Getting Started</header>
+
+            <p>To begin,create a simple HTML file and style it with a CSS file.</p>
+
+            <pre><code>
+                &lt;DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;head&gt;
+                 &lt;link rel="stylesheet" href="style.css"&gt;
+                 &lt;/head&gt;
+                 &lt;body&gt;
+                  &lt;h1&gt;Hello World&lt;/h1&gt;
+                 &lt;/body&gt;
+                &lt;/html&gt;
+            </code></pre>
+          </section>
+
+          <section id="html_syntax" class="main-section">
+            <header>HTML Syntax</header>
+            <p>HTML is composed of elements. Each element uses tags to define content.</p>
+            <p>eaxample code:</p>
+            <p><pre><code>&lt;p&gt; A paragraph &lt;/p&gt;
+&lt;a href="https://eaxample.com"&gt; A link &lt;/a&gt;
+            </code></pre></p>
+          </section>
+
+          <section id="css_syntax" class="main-section">
+            <header>CSS Syntax</header>
+            <p>CSS consists of selectors and declarations.</p>
+            <p>eaxample code:</p>
+            <pre><code>p {
+ color: blue;
+ font-size: 16px;
+}   
+            </code></pre>
+          </section>
+
+          <section id="selectors" class="main-section">
+            <header>CSS Selectors</header>
+            <ul>
+                <li><code>p</code> - selects all &lt;p&gt; elements</li>
+                <li><code>.class</code> - selects all elements with a class</li>
+                <li><code>#id</code> - selects an element with an ID</li>
+                <li><code>div >p</code> - selects direct children</li>
+            </ul>
+          </section>
+
+          <section id="box_model" class="main-section">
+            <header>CSS Box Model</header>
+            <p>All HTML elements are considered as boxes</p>
+            <ul>
+                <li><strong>Content</strong>: the actual text or image</li>
+                <li><strong>Padding</strong>: space around content</li>
+                <li><strong>Border</strong>: around the padding</li>
+                <li><strong>Margin</strong>: space outside border</li>
+            </ul>
+          </section>
+
+          <section id="flexbox" class="main-section">
+            <header>CSS Flexbox</header>
+            <p>Flexbox makes layout tasks easier:</p>
+            <p>eaxample code:</p>
+            <pre><code>.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
 }
+            </code></pre>
+          </section>
 
-html {
-    scroll-behavior: smooth;
-}
+          <section id="troubleshooting" class="main-section">
+            <header>Troubleshooting</header>
+            <ul>
+                <li><strong>CSS not applying?</strong> Check the <code>link,</code> tag and file paths.</li>
+                <li><strong>HTML rendering oddly?</strong> Use the browser inspector to debug.</li>
+                <li><strong>Responsive issues?</strong> Use media queries and test on different screens.</li>
+            </ul>
+          </section>
 
-body {
-    background-color: rgb(77, 100, 100);
-    line-height: 1.6;
-}
+          <section id="resources" class="main-section">
+            <header>Resources</header>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML - MDN Docs</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS - MDN Docs</a></li>
+                <li><a href="https://freecodecamp/org" target="_blank">freeCodeCamp</a></li>
+            </ul>
+          </section>
 
-#navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #161313;
-    padding: 7px 0;
-    z-index: 1000;
-    text-align: right;
-}
-
-#navbar a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 20px;
-    padding: 0 3px;
-}
-
-#navbar a:hover {
-    background: rgba(170, 2, 100, 0.2);
-}
-
-#navbar a:visited {
-    color: white;
-}
-
-#welcome-section {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    padding: 0 20px;
-}
-
-#welcome-section h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-#projects {
-    background: #23405f;
-    padding: 30px 20px;
-    color: #fff;
-    text-align: center;
-}
-
-#projects h2 {
-    font-size: 1.6rem;
-    font-style: italic;
-    margin-bottom: 40px;
-    padding-bottom: 10px;
-}
-
-.project-grid {
-    display: grid;
-    gap: 50px;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    justify-items: center;
-}
-
-.project-tile {
-    color: #000;
-    width: 100%;
-    max-width: 300px;
-    border-radius: 8px;
-    overflow: hidden;
-    text-decoration: none;
-    transition: transform 0.3s;
-}
-
-.project-tile:hover {
-    transform: translateY(-5px);
-}
-
-.project-grid img{
-    width: 100%;
-    display: block;
-}
-
-.project-title {
-    padding: 15px;
-    font-size: 1.2rem;
-    background: #161313;
-    color: #fff;
-}
-
-.project-tile h5 {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.2rem;
-    background: #161313;
-    display: inline-block;
-    border-radius: 15px;
-    padding: 1px 10px;
-}
-
-
-.contact {
-    height: 95vh;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
-    padding: 120px 0;
-    margin: 0;
-}
-
-.contact h4 {
-    margin: 0;
-    font-size: 2.3rem;
-    padding-bottom: 0;
-}
-
-.contact p {
-    font-style: italic;
-    font-size: 1.2rem;
-    padding-top: 0;
-    padding-bottom: 40px;
-}
-
-.contact a {
-    font-size: 1.5rem;
-    justify-content: space-evenly;
-    color: white;
-}
-
-@media (max-width: 500px) {
-    #welcome-section h1 {
-        text-align: center;
-        font-size: 1.5rem;
-    }
-    #projects h2 {
-        font-size: 1.2rem;
-    }
-    .project-grid {
-        align-items: center;
-        align-content: center;
-        font-size: 1rem;
-        justify-content: center;
-    }
-    h3 {
-        font-size: 1rem;
-    }
-    .contact h4 {
-        font-size: 1.5rem;
-        text-align: center;
-        padding-right: 10px;
-    }
-    .contact p{
-        font-size: 1rem;
-        text-align: center;
-        padding-bottom: 60px;
-        padding-right: 10px;
-    }
-    .contact a {
-        font-size: 1.5rem;
-        justify-content: space-between;
-        text-align: center;
-        padding-right: 10px;
-    }
-    .contact {
-        padding: 90px 0;
-    }
-}
-</style>
-</head>
-
-<body>
-    <main id="main-doc">
-        <header>
-            <nav id="navbar">
-                <a href="#about">About</a> 
-                <a href="#work">Work</a> 
-                <a href="#contact">Contact</a>
-            </nav>
-        </header>
+        </main>
         
-        <div id="about"></div>
-        <section id="welcome-section">
-            <h1>Hey there! I am Abdrazaq</h1>
-            <h3>a web developer</h3>
-        </section>
-
-
-        <div id="work"></div>
-        <section id="projects">
-                <h2>These are some of my projects</h2>
-                <div class="project-grid">
-                    <a class="project-tile" href="project-link" target="_blank">
-                        <img src="Screenshot (83).png" alt="project 1"/>
-                        <div class="project-title">Documentation Page</div>
-                    </a>
-                    
-                    <a class="project-tile" href="project-link" target="_blank">
-                        <img class="right" src="Screenshot (86).png" alt="project 2">
-                        <div class="project-title">Product Page</div>
-                    </a>
-
-                    <a class="project-tile" href="project-link" target="_blank">
-                        <img class="left" src="Screenshot (84).png" alt="project 3"/>
-                        <div class="project-title">Survey Page</div>
-                    </a>
-
-                    <a class="project-tile" href="project-link" target="_blank">
-                        <img class="right" src="Screenshot (85).png" alt="project 4"/>
-                        <div class="project-title">Tribute Page</div>
-                    </a>
-                </div>
-                <a class="project-tile" href="project-link" target="_blank">
-                    <h5>See all</h5>
-                </a>
-        </section>
-
-
-        <div id="contact"></div>
-
-        <section class="contact">
-            <div>
-                <ul>
-                    <h4>Let's Work Together...</h4>
-                    <p class="last">How do you like your tea?</p>
-                        <a class="project-tile" href="project-link" target="_blank">Facebook</a>
-                        <a class="project-tile" href="project-link" target="_blank">X</a>
-                        <a class="project-tile" href="project-link" target="_blank">Whatsapp</a>
-                        <a class="project-tile" href="project-link" target="_blank">Email</a>
-                </ul>
-            </div>
-        </section>
-    </main>
-</body>
+    </body>
 
 </html>
